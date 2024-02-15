@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale" />
+    <title>Fonctions Flechées</title>
+  </head>
+
+  <body>
+    <div id="id"></div>
+    <div id="time"></div>
+  </body>
+
+  <script>
+  //  function prixTTC(prixHT, taux) {
+        //let prixTTC = prixHT + prixHT*(taux/100);
+       // return prixTTC
+        //}
+      //  document.getElementById("id").innerHTML = prixTTC(100, 20)
+    
+    const prixTTC = (prixHT, taux) => {
+        let prixTTC = prixHT + prixHT*(taux/100)
+        return prixTTC
+    }
+        document.getElementById("id").innerHTML = prixTTC(100, 20)
+    
+   // const afficherHeure = date => {
+     //   return date.getHours()
+    //}
+    function afficherHeure(date) {
+        return date.getHours()
+    }
+
+    document.getElementById("time").innerHTML = afficherHeure(new Date())
+    
+    //"../jsEs6/fonctionFactorielle.js";
+  </script>
+</html>

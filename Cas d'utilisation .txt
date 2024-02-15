@@ -1,0 +1,12 @@
+Cas d'utilisation :
+
+Internaute :
+S'inscrire
+Consulter les informations générales du club (les contacts du club, réseaux sociaux du club, téléphone, mail)
+Consulter les actualités du club
+
+Membre : 
+S'authentifier
+Acceder aux championnats
+S'insrire à un évènement du club
+Gérer ses informations personnelles

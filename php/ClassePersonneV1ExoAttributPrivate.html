@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+ClassePersonneV1AttributsPrivate.html
+Un objet : constructeur + getter + setter
+-->
+<html>
+
+<head>
+    <title>ClassePersonneV1.html</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <div>
+        <p><strong>ClassePersonneV1AttributsPrivate.html</strong></p>
+        <p><strong>Ouvrez la console (F12)</strong></p>
+
+        <p id="prenom"></p>
+        <p id="nom"></p>
+    </div>
+
+    <script>
+        class Personne {
+            #prenom
+            #nom = ""
+            constructor(nom, prenom) {
+                this.#nom = nom
+                this.#prenom = prenom
+            }
+            getNom() {
+                return this.#nom
+            }
+            getPrenom() {
+                return this.#prenom
+            }
+
+            setNom(nom) {
+                this.#nom = nom
+            }
+            setPrenom(prenom) {
+                this.#prenom = prenom
+            }
+        } /// class Personne
+
+        /*
+         * MAIN
+         */
+        // CALL CONSTRUCTOR
+        let personne = new Personne("buguet", "pascal")
+
+        /*
+         * GET
+         */
+        // Appel des getters sur l’objet personne
+        let nom = personne.getNom()
+        let prenom = personne.getPrenom()
+        console.log("Juste après le constructeur : " + prenom + " " + nom)
+
+        /*
+         * SET
+         */
+        // Appel des setters sur l’objet personne
+        personne.setPrenom("Pascal")
+        personne.setNom("BUGUET")
+        nom = personne.getNom()
+        // let prenom = personne.#prenom // Erreur, l'attribut est privé
+        prenom = personne.getPrenom()
+        console.log(prenom)
+        console.log(prenom + " " + nom)
+
+        /*
+        DISPLAY
+        */
+        document.getElementById("prenom").innerHTML = prenom
+        document.getElementById("nom").innerHTML = nom
+
+        console.log("Affichage via l'attribut privé (Undefined !) : " + personne.prenom)
+        // console.log("Affichage via l'attribut privé (Erreur, Private field '#prenom' must be declared !) : " + personne.#prenom)
+    </script>
+</body>
+
+</html>

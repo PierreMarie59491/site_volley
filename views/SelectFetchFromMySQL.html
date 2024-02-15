@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PaysSelectFetchSQL.html</title>
+    </head>
+
+    <body>
+
+        <div id="divPays"></div>
+
+        <script>
+            function getData() {
+                const URL = "http://pascalbuguet.alwaysdata.net/PourFrontJS/php/PaysSelectFromMySQL.php"
+
+                //  const URL = "http://localhost/PourFrontJS/php/PaysSelectFromMySQL.php"
+
+                    fetch(URL)
+                        .then(response => {
+                            console.log("RESPONSE")
+                            console.log(response)
+                            return response.json()
+                        })
+                        .then(result => {
+                            // Tableau ordinal d’objets JSON
+                            console.log("RESULT")
+                            console.log(result)
+                            let contents = ""
+                            for (let i = 0; i < result.length; i++) {
+                                contents += result[i].id_pays + " : " + result[i].nom_pays + "<br>"
+                            }
+                            document.getElementById("divPays").innerHTML = contents
+                        },
+                                error => {
+                                    console.log("ERROR")
+                                    console.log(error)
+                    document.getElementById("divPays").innerHTML = error
+                                }
+                        )
+
+            } /// getData
+
+            /*
+            MAIN
+            */
+            getData()
+        </script>
+    </body>
+</html>

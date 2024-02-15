@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PaysInsertFetchPOST.html</title>
+  </head>
+  <body>
+    <label>Civilite :</label>
+    <input type="text" name="civilite" id="civilite" value="H" />
+    <label>Nom :</label>
+    <input type="text" name="nom" id="nom" value="Marie" />
+    <label>Prénom :</label>
+    <input type="text" name="prenom" id="prenom" value="Pierre" />
+    <label>Pseudo :</label>
+    <input type="text" name="pseudo" id="pseudo" value="Pierro" />
+    <label>Mot de passe :</label>
+    <input
+      type="password"
+      name="mot_de_passe"
+      id="mot_de_passe"
+      value="Pierro"
+    />
+    <label>Licence n° :</label>
+    <input type="text" name="num_licence" id="num_licence" value="1933181" />
+    <label>Téléphone :</label>
+    <input
+      type="text"
+      name="tel_adherent"
+      id="tel_adherent"
+      value="060606060606"
+    />
+    <label>Adresse :</label>
+    <input type="text" name="adresse" id="adresse" value="9 rue du point" />
+    <label>Email :</label>
+    <input type="text" name="email" id="email" value="pierre@test.fr" />
+    <label>Date de naissance :</label>
+    <input
+      type="date"
+      name="dateDeNaissance"
+      id="date_de_naissance"
+      value="1987-12-09"
+    />
+    <label>Equipe :</label>
+    <input type="text" name="id_equipe" id="id_equipe" value="1" />
+    <label>Encadrant</label>
+    <input type="text" name="id_encadrant" id="id_encadrant" value="1" />
+    <label>Ville :</label>
+    <input type="text" name="id_ville" id="id_ville" value="1" />
+    <input type="button" value="Inscription" name="btInsert" id="btInsert" />
+
+    <div id="message"></div>
+    
+    <script src="../models/Adherent.js"></script>
+    <script src="../controllers/AdherentInsertCTRL.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>map_v3.html</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p><strong>Ouvrez la console (F12)</strong></p>
+        <p id="paragraphe"></p>
+        <script>
+            // Version ES6
+            let enMajuscules = (texte) => {
+                return texte.toUpperCase()
+            }
+            /*
+             * MAIN
+             */
+            const arrayIN = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"]
+            const arrayOUT = arrayIN.map(enMajuscules)
+            console.log(arrayOUT)
+            document.getElementById("paragraphe").innerHTML = arrayOUT
+
+        </script>
+    </body>
+</html>

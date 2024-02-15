@@ -1,0 +1,15 @@
+SELECT DISTINCT c.prenom `Prénom`,
+c.nom `Nom`,
+c.id_client `ID`
+FROM pays p
+INNER JOIN villes v
+ON p.id_pays = v.id_pays
+INNER JOIN clients c
+ON v.cp = c.cp
+INNER JOIN cdes cd
+ON c.id_client = cd.id_client
+INNER JOIN ligcdes l
+ON cd.id_cde = l.id_cde
+INNER JOIN produits pr
+ON l.id_produit = pr.id_produit
+WHERE UPPER(pr.designation) = 'BADOIT' AND p.nom_pays = 'Italie';

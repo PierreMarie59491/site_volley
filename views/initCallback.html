@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>InitCallback</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h3>InitCallback</h3>
+            <input type="text" id="prenom" value="Pascal" />
+            <input type="button" value="Valider" id="btValider" /><br>
+            <label id="message"></label><br>
+            <label id="message2"></label><br>
+            <label id="message3"></label>
+        </div>
+        <script>
+            document.getElementById("btValider").addEventListener("click", () => {
+                document.getElementById("message").innerHTML = document.getElementById("prenom").value
+            })
+            document.getElementById("btValider").onclick=() => {
+                document.getElementById("message2").innerHTML = document.getElementById("prenom").value
+            }
+            document.getElementById("btValider").addEventListener("click",() => {
+                document.getElementById("message3").innerHTML = document.getElementById("prenom").value
+            }
+            )
+        </script>
+    </body>
+</html>

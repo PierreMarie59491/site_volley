@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+ClassePersonneV1.html
+Un objet : constructeur + getter + setter
+-->
+<html>
+    <head>
+        <title>ClassePersonneV1.html</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div>
+            <p><strong>ClassePersonneV1.html</strong></p>
+            <p><strong>Ouvrez la console (F12)</strong></p>
+
+            <p id="nomPrenom1"></p>
+            <p id="nomPrenom2"></p>
+        </div>
+
+        <script>
+            class Personne {
+                constructor(nom, prenom) {
+                    this.nom = nom
+                    this.prenom = prenom
+                }
+                // function sans paramètre
+                getNom() {
+                    return this.nom
+                }
+                getPrenom() {
+                    return this.prenom
+                }
+                // procédure paramétrée
+                setNom(nom) {
+                    this.nom = nom
+                }
+                setPrenom(prenom) {
+                    this.prenom = prenom
+                }
+            } /// class Personne
+
+            /*
+             * MAIN
+             */
+            // CALL CONSTRUCTOR
+            let personne = new Personne("Buguet", "Pascal")
+
+            /*
+             * GET
+             */
+            // Appel des getters sur l’objet personne
+            let nom = personne.getNom()
+            let prenom = personne.getPrenom()
+document.getElementById("nomPrenom2").innerHTML = prenom + " " + nom
+
+            /*
+             * SET
+             */
+            // Appel des setters sur l’objet personne
+            personne.setPrenom("Pascal")
+            personne.setNom("BUGUET")
+            nom = personne.getNom()
+            prenom = personne.getPrenom()
+document.getElementById("nomPrenom2").innerHTML = prenom + " " + nom
+        </script>
+    </body>
+</html>

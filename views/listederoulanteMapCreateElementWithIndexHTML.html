@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mapExerciceListeDeroulanteCreateElementFromArrayJSON</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>mapExerciceListeDeroulanteCreateElementFromArrayJSON</h1>
+        <p><strong>Ouvrez la console (F12)</strong></p>
+        <div>
+            <form>
+                <select id="villes" name="villes"></select>
+                <input type="submit" value="Valider" />
+            </form>
+        </div>
+ 
+        <script>
+            /**
+             *
+             * @param {type} item
+             * @returns {Element|getOption.option}
+             */
+            const getOption = item => {
+                // item est un objet JSON
+                //return `<option value='${item}'>${item}</option>`
+                let option = document.createElement("option")
+                option.value = item.cp
+                option.innerHTML = item.ville
+                console.log(option)
+                return option
+            }
+ 
+            //const arrayIN = ["Paris", "Lyon", "Marseille"]
+//            const arrayIN = new Array()
+//            let p = {"cp": "75000", "ville": "Paris"}
+//            arrayIN[0] = p
+//            p = {"cp": "13000", "ville": "Marseille"}
+//            arrayIN[1] = p
+//            p = {"cp": "59000", "ville": "Lille"}
+//            arrayIN[2] = p
+ 
+            // Création d'un tableau ordinal d'objets JSON
+            const arrayIN = [{"cp": "75000", "ville": "Paris"}, {"cp": "13000", "ville": "Marseille"}, {"cp": "59000", "ville": "Lille"}]
+            console.log(arrayIN)
+ 
+            // CALL getOption()
+            const arrayOUT = arrayIN.map(getOption)
+            // Avec une fonction anonyme
+//            const arrayOUT = arrayIN.map(item => {
+//                let option = document.createElement("option")
+//                option.value = item.cp
+//                option.innerHTML = item.ville
+//                console.log(option)
+//                return option
+//                //return `<option value='${item}'>${item}</option>`
+//            })
+            console.log(arrayOUT)
+            for (let i = 0; i < arrayOUT.length; i++) {
+                document.getElementById("villes").appendChild(arrayOUT[i])
+            }
+            //document.getElementById("villes").innerHTML = arrayOUT
+        </script>
+    </body>
+</html>

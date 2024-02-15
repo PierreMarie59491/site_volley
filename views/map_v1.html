@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>map_v1.hmtl</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <p><strong>Ouvrez la console (F12)</strong></p>
+    <p id="in"></p>
+    <p id="out"></p>
+
+    <script>
+        /*
+         * Retourne un nouveau tableau contenant tous les éléments du tableau initial sur lesquels une fonction est appelée.
+         * Cette notation évite l'utilisation d'une boucle pour parcourir manuellement les éléments du tableau un par un, avec for ou forEach().
+         */
+        function testMap(tIN) {
+            // Renvoie un tableau à partir d'un tableau après avoir appliqué une fonction
+            /* https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/map
+             * La méthode map() crée un nouveau tableau avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau appelant.
+             */
+            let arrayOUT = tIN.map( (x) => {
+              
+                return x * x
+            })
+            return arrayOUT
+        } /// testMap
+
+        /*
+         * MAIN
+         */
+        const arrayIN = [1, 2, 3, 4, 5]
+        console.log("arrayIN")
+        console.log(arrayIN)
+        document.getElementById("in").innerHTML = arrayIN
+        const arrayOUT = testMap(arrayIN)
+        // Affichage à la console
+        console.log("arrayOUT")
+        console.log(arrayOUT)
+        // Affichage dans la page HTML
+        document.getElementById("out").innerHTML = arrayOUT
+    </script>
+</body>
+
+</html>

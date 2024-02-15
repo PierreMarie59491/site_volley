@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>map_v3.html</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <p><strong>Ouvrez la console (F12)</strong></p>
+    <form method="GET">
+      <select id="villes" name="villes"></select>
+      <input type="submit" value="Envoyer" id="btValider" />
+    </form>
+
+    <script>
+      // Version ES6
+      const deroulante = (texte, index) => {
+                //génération des options en mode DOM
+        let option = document.createElement("option");
+        option.innerHTML = texte;
+        option.value = index;
+        return option;
+      };
+      /*
+       * MAIN
+       */
+      const arrayIN = ["Paris", "Lyon", "Marseilles", "Lille", "Caen"];
+      const arrayOUT = arrayIN.map(deroulante);
+      console.log(arrayOUT);
+      for (i = 0; i < arrayOUT.length; i++) {
+        document.getElementById("villes").appendChild(arrayOUT[i]);
+      }
+    </script>
+  </body>
+</html>

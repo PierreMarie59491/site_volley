@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>PaysSelectFetchSQL.html</title>
+  </head>
+
+  <body>
+    <label>Pseudo</label>
+    <input type="text" name="pseudo" value="Isabella" id="pseudo" />
+    <label>Mot de Passe</label>
+    <input type="password" name="mdp" value="PB@gmail.com" id="mdp" />
+    <button type="button" class="btSubmit" id="btSubmit">Valider</button>
+    <label id="message">Message</label>
+
+    <script>
+      document.getElementById("btSubmit").addEventListener("click", () => {
+        authentification();
+      });
+
+      function authentification() {
+        let pseudo = document.getElementById("pseudo").value;
+        let mdp = document.getElementById("mdp").value;
+
+        const URL =
+          "http://127.0.0.1/PourFrontJS/php/AuthentificationFromMySQL.php?pseudo=" +
+          pseudo +
+          "&mdp=" +
+          mdp;
+
+        //  const URL = "http://localhost/PourFrontJS/php/PaysSelectFromMySQL.php"
+
+        fetch(URL)
+          .then((response) => {
+            console.log("RESPONSE");
+            console.log(response);
+            return response.json();
+          })
+          .then((result) => {
+            // Tableau ordinal d’objets JSON
+            console.log("RESULT");
+            console.log(result);
+            const authentifResult = result.message;
+
+            switch (authentifResult) {
+              case "OK":
+                content = "Vous êtes connecté";
+                break;
+              case "KO":
+                content = "Vous n'êtes pas connecté";
+                break;
+              case -1:
+                content = "Toutes les saisies sont obligatoires";
+                break;
+            }
+            document.getElementById("message").innerHTML = content;
+          });
+      }
+
+      //           content = "";
+      //           if (authentifResult === "OK") {
+      //             content = "Vous êtes connecté";
+      //           } else {
+      //             content = "Vous n'êtes pas connecté";
+      //           }
+      //   document.getElementById("message").innerHTML = content;
+      //         },
+      //         (error) => {
+      //           console.log("ERROR");
+      //           console.log(error);
+      //           document.getElementById("message").innerHTML = error;
+      //         }
+      //       );
+      //   } /// getData
+
+      /*
+            MAIN
+            */
+    </script>
+  </body>
+</html>
